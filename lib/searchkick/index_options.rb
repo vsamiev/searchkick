@@ -359,7 +359,11 @@ module Searchkick
 
           mapping[field] = fields[field].merge(fields: fields.except(field))
         end
-
+        
+        p '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+        p options[:locations]
+        p options
+        p '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
         (options[:locations] || []).map(&:to_s).each do |field|
           mapping[field] = {
             type: "geo_point"
