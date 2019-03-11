@@ -70,6 +70,9 @@ module Searchkick
           # do nothing
         end
       else
+        p '>>>>>Method name'
+        p method_name
+        record.class.searchkick_index
         if method_name
           index.update_record(record, method_name)
         else
