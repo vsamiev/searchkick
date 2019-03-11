@@ -41,7 +41,7 @@ module Searchkick
 
     def bulk_index(records)
       p '????'
-      p RecordData.new(index, r).index_data
+      p RecordData.new(index, records[0]).index_data
       Searchkick.indexer.queue(records.map { |r| RecordData.new(index, r).index_data })
     end
 
