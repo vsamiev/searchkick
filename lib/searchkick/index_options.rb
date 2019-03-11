@@ -365,6 +365,7 @@ module Searchkick
         p options
         p '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
         (options[:locations] || []).map(&:to_s).each do |field|
+          p field
           mapping[field] = {
             type: "geo_point"
           }
