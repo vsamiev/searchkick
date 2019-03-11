@@ -74,8 +74,10 @@ module Searchkick
         p method_name
         record.class.searchkick_index
         if method_name
+          p '>>>>>Update'
           index.update_record(record, method_name)
         else
+          p '>>>>>Store'
           index.store(record)
         end
       end
