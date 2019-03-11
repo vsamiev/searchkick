@@ -122,6 +122,8 @@ module Searchkick
     # use helpers for notifications
 
     def store(record)
+      p '>>>>>Storing'
+      
       bulk_indexer.bulk_index([record])
     end
 
