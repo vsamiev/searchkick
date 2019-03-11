@@ -18,6 +18,7 @@ module Searchkick
         p '>>>>ITEMS'
         p items
         response = Searchkick.client.bulk(body: items)
+        p response
         if response["errors"]
           first_with_error = response["items"].map do |item|
             (item["index"] || item["delete"] || item["update"])
