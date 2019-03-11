@@ -15,6 +15,8 @@ module Searchkick
       items = @queued_items
       @queued_items = []
       if items.any?
+        p '>>>>ITEMS'
+        p items
         response = Searchkick.client.bulk(body: items)
         if response["errors"]
           first_with_error = response["items"].map do |item|
