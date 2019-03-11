@@ -40,6 +40,8 @@ module Searchkick
     end
 
     def bulk_index(records)
+      p '????'
+      p RecordData.new(index, r).index_data
       Searchkick.indexer.queue(records.map { |r| RecordData.new(index, r).index_data })
     end
 
