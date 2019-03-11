@@ -13,7 +13,9 @@ module Searchkick
       end
 
       mode ||= Searchkick.callbacks_value || index.options[:callbacks] || true
-
+      
+      p '>>>>>RecordIndexer'
+      p mode
       case mode
       when :queue
         if method_name
